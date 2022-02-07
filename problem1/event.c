@@ -1,6 +1,7 @@
 #include "event.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 Event *CreateEvent(char *name)
 {

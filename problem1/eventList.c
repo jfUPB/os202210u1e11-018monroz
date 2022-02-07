@@ -19,23 +19,34 @@ void DestroyEventList(EventList *this)
 
 Event *SearchEvent(EventList *this, char *name)
 {
-    Event a = *this->head;
-    while (a.next != NULL)
-    {
-        if (name == a.eventName)
+    Event* a = this->head;
+    do{
+        if (name == a->eventName)
         {
-            return &a;
+            return a;
         }
-        
+    a = a->next;
     }
+    while (a->next != NULL);
+    
     
     return NULL;
 }
 
 void AddEvent(EventList *this, Event *event)
 {
-    this->last->next = event;
-    this->last = event;
+    if (this->isEmpty == 0)
+    {
+        this->isEmpty = 1;
+        this->head = event;
+        this->last = event;
+    }
+    else
+    {
+        this->last->next = event;
+        this->last = event;
+    }
+    
 }
 
 void RemoveEvent(EventList *this, char *name)
