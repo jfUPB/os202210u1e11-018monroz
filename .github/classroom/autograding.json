@@ -3,7 +3,7 @@
     {
       "name": "Compilación",
       "setup": "",
-      "run": "make",
+      "run": "cd ./problem1 && make",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -13,7 +13,7 @@
     {
       "name": "15",
       "setup": "",
-      "run": "./test-main.sh t 15",
+      "run": "cd ./problem1 && bash ./test-main.sh t 15",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -23,7 +23,7 @@
     {
       "name": "1",
       "setup": "",
-      "run": "./test-main.sh t 1",
+      "run": "cd ./problem1 && bash ./test-main.sh t 1",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -33,7 +33,7 @@
     {
       "name": "2",
       "setup": "",
-      "run": "./test-main.sh t 2",
+      "run": "cd ./problem1 && bash ./test-main.sh t 2",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -43,7 +43,7 @@
     {
       "name": "3",
       "setup": "",
-      "run": "./test-main.sh t 3",
+      "run": "cd ./problem1 && bash ./test-main.sh t 3",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -53,7 +53,7 @@
     {
       "name": "4",
       "setup": "",
-      "run": "./test-main.sh t 4",
+      "run": "cd ./problem1 && bash ./test-main.sh t 4",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -63,7 +63,7 @@
     {
       "name": "5",
       "setup": "",
-      "run": "./test-main.sh t 5",
+      "run": "cd ./problem1 && bash ./test-main.sh t 5",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -73,7 +73,7 @@
     {
       "name": "6",
       "setup": "",
-      "run": "./test-main.sh t 6",
+      "run": "cd ./problem1 && bash ./test-main.sh t 6",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -83,7 +83,7 @@
     {
       "name": "7",
       "setup": "",
-      "run": "./test-main.sh t 7",
+      "run": "cd ./problem1 && bash ./test-main.sh t 7",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -93,7 +93,7 @@
     {
       "name": "8",
       "setup": "",
-      "run": "./test-main.sh t 8",
+      "run": "cd ./problem1 && bash ./test-main.sh t 8",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -103,7 +103,7 @@
     {
       "name": "9",
       "setup": "",
-      "run": "./test-main.sh t 9",
+      "run": "cd ./problem1 && bash ./test-main.sh t 9",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -113,7 +113,7 @@
     {
       "name": "10",
       "setup": "",
-      "run": "./test-main.sh t 10",
+      "run": "cd ./problem1 && bash ./test-main.sh t 10",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -123,7 +123,7 @@
     {
       "name": "11",
       "setup": "",
-      "run": "./test-main.sh t 11",
+      "run": "cd ./problem1 && bash ./test-main.sh t 11",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -133,7 +133,7 @@
     {
       "name": "12",
       "setup": "",
-      "run": "./test-main.sh t 12",
+      "run": "cd ./problem1 && bash ./test-main.sh t 12",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -143,7 +143,7 @@
     {
       "name": "13",
       "setup": "",
-      "run": "./test-main.sh t 13",
+      "run": "cd ./problem1 && bash ./test-main.sh t 13",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -153,7 +153,7 @@
     {
       "name": "14",
       "setup": "",
-      "run": "./test-main.sh t 14",
+      "run": "cd ./problem1 && bash ./test-main.sh t 14",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -163,7 +163,7 @@
     {
       "name": "16",
       "setup": "",
-      "run": "./test-main.sh t 16",
+      "run": "cd ./problem1 && bash ./test-main.sh t 16",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -173,7 +173,7 @@
     {
       "name": "17",
       "setup": "",
-      "run": "./test-main.sh t 17",
+      "run": "cd ./problem1 && bash ./test-main.sh t 17",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -183,7 +183,7 @@
     {
       "name": "18",
       "setup": "",
-      "run": "./test-main.sh t 18",
+      "run": "cd ./problem1 && bash ./test-main.sh t 18",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -193,7 +193,7 @@
     {
       "name": "19",
       "setup": "",
-      "run": "./test-main.sh t 19",
+      "run": "cd ./problem1 && bash ./test-main.sh t 19",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -203,7 +203,7 @@
     {
       "name": "Uso de memoria dinámica",
       "setup": "",
-      "run": "valgrind ./main < ./tests/12.in",
+      "run": "cd ./problem1 && bash valgrind ./main < ./tests/12.in",
       "input": "",
       "output": "",
       "comparison": "included",
