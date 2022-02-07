@@ -5,8 +5,8 @@
 
 EventList *CreateEventList(void)
 {
-    EventList *eventList = NULL;
-
+    EventList *eventList = malloc(sizeof(EventList)) ;
+    eventList->isEmpty = 0;
     return eventList;
 }
 
@@ -19,14 +19,23 @@ void DestroyEventList(EventList *this)
 
 Event *SearchEvent(EventList *this, char *name)
 {
-
-
+    Event a = *this->head;
+    while (a.next != NULL)
+    {
+        if (name == a.eventName)
+        {
+            return &a;
+        }
+        
+    }
+    
     return NULL;
 }
 
 void AddEvent(EventList *this, Event *event)
 {
-
+    this->last->next = event;
+    this->last = event;
 }
 
 void RemoveEvent(EventList *this, char *name)
