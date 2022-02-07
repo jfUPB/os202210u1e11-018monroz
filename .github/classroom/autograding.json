@@ -199,16 +199,6 @@
       "comparison": "included",
       "timeout": 10,
       "points": 2
-    },
-    {
-      "name": "Uso de memoria dinámica",
-      "setup": "",
-      "run": "cd ./problem1 && bash valgrind ./main < ./tests/12.in",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 0
     }
   ]
 }
