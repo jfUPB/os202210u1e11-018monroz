@@ -6,7 +6,9 @@
 EventList *CreateEventList(void)
 {
     EventList *eventList = malloc(sizeof(EventList)) ;
+    eventList->head = NULL;
     eventList->isEmpty = 0;
+    eventList->last = NULL;
     return eventList;
 }
 
@@ -21,11 +23,16 @@ Event *SearchEvent(EventList *this, char *name)
 {
     Event* a = this->head;
     do{
-        if (name == a->eventName)
+        if (*name == *a->eventName)
         {
             return a;
         }
-    a = a->next;
+        else
+        {
+            a = a->next;
+        }
+        
+    
     }
     while (a->next != NULL);
     
@@ -55,6 +62,33 @@ void RemoveEvent(EventList *this, char *name)
 
 void ListEvents(EventList *this)
 {
-    // imprime esto si la lista está vacía
-    printf("empty\n");
+    Event* a = this->head;
+    if (this->isEmpty == 0)
+    {
+        printf("empty\n");
+    }
+    else
+    {
+        do
+        {
+            printf("%s\n",a->eventName);
+
+            if (a->next != NULL)
+            {
+                a = a->next;
+            }
+            else
+            {
+                break;
+            }
+            
+                    
+        }
+        
+        while (1);
+    }
+    
+    
+    
+    
 }
