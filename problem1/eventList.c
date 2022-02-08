@@ -23,7 +23,7 @@ Event *SearchEvent(EventList *this, char *name)
 {
     Event* a = this->head;
     do{
-        if (*name == *a->eventName)
+        if (*name == *a->eventName && *(a->eventName+2) == *(name+2) && *(a->eventName+3) == *(name+3))
         {
             return a;
         }
@@ -42,6 +42,10 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
+    char exists = 0;
+    Event* a = this->head;
+    
+    
     if (this->isEmpty == 0)
     {
         this->isEmpty = 1;
