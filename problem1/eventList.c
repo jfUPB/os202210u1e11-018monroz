@@ -58,6 +58,37 @@ void AddEvent(EventList *this, Event *event)
 
 void RemoveEvent(EventList *this, char *name)
 {
+    Event* a = this->head;
+    
+    if (*this->head->eventName == *name && *(this->head->eventName+2) == *(name+2))
+    {
+        this->head = this->head->next;
+        free(a);
+    }
+    
+    
+    else
+    {
+        do
+        {
+            if (*a->next->eventName == *name && *(a->next->eventName+2) == *(name+2))
+            {
+                Event* b = a->next;
+                a->next = b->next;
+                free(b);
+                break;
+                return;
+            }
+            
+            a = a->next;
+        }
+        while (a != NULL);
+
+    }
+   
+    
+       
+    
 }
 
 void ListEvents(EventList *this)
@@ -82,9 +113,7 @@ void ListEvents(EventList *this)
                 break;
             }
             
-                    
         }
-        
         while (1);
     }
     
