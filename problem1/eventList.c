@@ -34,7 +34,7 @@ Event *SearchEvent(EventList *this, char *name)
         
     
     }
-    while (a->next != NULL);
+    while (a!= NULL);
     
     
     return NULL;
@@ -58,11 +58,21 @@ void AddEvent(EventList *this, Event *event)
 
 void RemoveEvent(EventList *this, char *name)
 {
+    if (this->isEmpty == 0)
+    {
+        return;
+    }
+    
     Event* a = this->head;
     
     if (*this->head->eventName == *name && *(this->head->eventName+2) == *(name+2))
     {
         this->head = this->head->next;
+        if (this->head == NULL)
+        {
+            this->isEmpty = 0;
+        }
+        
         free(a);
     }
     
