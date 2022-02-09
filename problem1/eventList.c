@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 EventList *CreateEventList(void)
 {
     EventList *eventList = malloc(sizeof(EventList)) ;
@@ -21,8 +22,10 @@ void DestroyEventList(EventList *this)
 
 Event *SearchEvent(EventList *this, char *name)
 {
-    Event* a = this->head;
-    do{
+    if (this->isEmpty != 0)
+    {
+        Event* a = this->head;
+        do{
         if (*name == *a->eventName && *(a->eventName+2) == *(name+2) && *(a->eventName+3) == *(name+3))
         {
             return a;
@@ -35,6 +38,7 @@ Event *SearchEvent(EventList *this, char *name)
     
     }
     while (a!= NULL);
+    }
     
     
     return NULL;
@@ -42,8 +46,20 @@ Event *SearchEvent(EventList *this, char *name)
 
 void AddEvent(EventList *this, Event *event)
 {
-    char exists = 0;
+    
     Event* a = this->head;
+    char* nom = event->eventName;
+    
+    while (a != NULL)
+    {
+        if (*a->eventName == *nom && *(a->eventName+2) == *(nom+2) && *(a->eventName+3) == *(nom+3))
+        {
+            return;
+        }
+        
+        a = a->next;
+    }
+    
     
     
     if (this->isEmpty == 0)
@@ -62,45 +78,78 @@ void AddEvent(EventList *this, Event *event)
 
 void RemoveEvent(EventList *this, char *name)
 {
+    char exists = 0;
+
     if (this->isEmpty == 0)
     {
         return;
     }
-    
-    Event* a = this->head;
-    
-    if (*this->head->eventName == *name && *(this->head->eventName+2) == *(name+2))
+
+    if (this->isEmpty != 0)
     {
-        this->head = this->head->next;
-        if (this->head == NULL)
+        Event* w = this->head;
+        do{
+        if (*name == *w->eventName && *(w->eventName+2) == *(name+2) && *(w->eventName+3) == *(name+3))
         {
-            this->isEmpty = 0;
+            exists = 1;
+            break;
+        }
+        else
+        {
+            w = w->next;
         }
         
-        free(a);
+    
+    }
+    while (w!= NULL);
     }
     
+    Event* a = this->head;
+
+    if (exists = 1)
+    {
+        if (*this->head->eventName == *name && *(this->head->eventName+2) == *(name+2))
+        {
+            this->head = this->head->next;
+            if (this->head == NULL)
+            {
+                this->isEmpty = 0;
+            }
+        
+        free(a);
+        }
     
+    
+        else
+        {
+            do
+            {
+                if (*a->next->eventName == *name && 
+                *(a->next->eventName+2) == *(name+2)&& 
+                *(a->next->eventName+3) == *(name+3))
+                {
+                    Event* b = malloc(sizeof(Event));
+                    b = a->next;
+                    a->next = b->next;
+                    b = NULL;
+                    free(b);
+                    break;
+                }
+                
+                a = a->next;
+                
+            }
+            while (a != NULL);
+
+        }
+    }
     else
     {
-        do
-        {
-            if (*a->next->eventName == *name && *(a->next->eventName+2) == *(name+2))
-            {
-                Event* b = a->next;
-                a->next = b->next;
-                free(b);
-                break;
-                return;
-            }
-            
-            a = a->next;
-        }
-        while (a != NULL);
-
+        return;
     }
-   
     
+    
+   
        
     
 }
