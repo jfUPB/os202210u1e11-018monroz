@@ -1,0 +1,19 @@
+eventList object created
+running add
+ev1 event added to eventList
+running add
+ev2 event added to eventList
+running add
+ev3 event added to eventList
+running ask
+running rm
+ev1 event removed from eventList
+running ask
+running rm
+ev2 event removed from eventList
+running ask
+running rm
+ev3 event removed from eventList
+running ask
+running exit
+eventList destroyed

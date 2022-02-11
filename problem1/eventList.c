@@ -78,36 +78,24 @@ void AddEvent(EventList *this, Event *event)
 
 void RemoveEvent(EventList *this, char *name)
 {
-    char exists = 0;
 
     if (this->isEmpty == 0)
     {
         return;
     }
 
-    if (this->isEmpty != 0)
-    {
-        Event* w = this->head;
-        do{
-        if (*name == *w->eventName && *(w->eventName+2) == *(name+2) && *(w->eventName+3) == *(name+3))
-        {
-            exists = 1;
-            break;
-        }
-        else
-        {
-            w = w->next;
-        }
-        
-    
-    }
-    while (w!= NULL);
-    }
-    
     Event* a = this->head;
+    Event* x = SearchEvent(this, name);
 
-    if (exists = 1)
+    if (x == NULL)
     {
+        return;
+    }
+    
+    
+    
+
+
         if (*this->head->eventName == *name && *(this->head->eventName+2) == *(name+2))
         {
             this->head = this->head->next;
@@ -132,7 +120,7 @@ void RemoveEvent(EventList *this, char *name)
                     b = a->next;
                     a->next = b->next;
                     b = NULL;
-                    free(b);
+                    DestroyEvent(b);
                     break;
                 }
                 
@@ -142,11 +130,7 @@ void RemoveEvent(EventList *this, char *name)
             while (a != NULL);
 
         }
-    }
-    else
-    {
-        return;
-    }
+    
     
     
    
